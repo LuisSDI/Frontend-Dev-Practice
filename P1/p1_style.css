@@ -74,10 +74,39 @@ body{
     flex-direction: column;
 }
 
-.logincontent_text{
+.logincontent_title{
     color: white;
     font-size: 36px;
     font-weight: bold;
+}
+.logincontent_subtitle
+{
+    color: #D6D6D6;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.logincontent_email{
+    width: 80%;
+    padding: 25px 10px;
+    border-radius: 20px;
+    font-size: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    /* outline: none; */
+    /* border-color: white;
+    border-width: 2px; */
+    border: 2px solid black;
+
+}
+.logincontent_email:focus{
+    outline: none;
+}
+
+.logincontent_email::placeholder{
+    color: #D6D6D6;
+    font-size: 30px;
+    
 }
 
 p {

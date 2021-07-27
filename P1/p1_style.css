@@ -2,6 +2,7 @@ body{
     /* height: 100%;
     width: 100%; */
     margin: 0px;
+    padding-bottom: 50px;
     font-family: 'Public Sans', sans-serif;
     background: linear-gradient(180deg, #6100FF 32.81%, #7B1BC7 81.25%);
     background-repeat: no-repeat;
@@ -37,7 +38,7 @@ body{
     display: flex;
     flex: content;
     flex-direction: row;
-    
+    margin: 2% 2%;
     justify-content: flex-start;
 }
 
@@ -47,8 +48,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 60%;
-    margin-left: 2%;
-    margin-top: 2%;
+
 
 }
 
@@ -72,6 +72,7 @@ body{
     padding-left: 5%;
     display: flex;
     flex-direction: column;
+    max-width: 40%;
 }
 
 .logincontent_title{
@@ -84,11 +85,13 @@ body{
     color: #D6D6D6;
     font-size: 25px;
     margin: 10px 0;
+    max-width: 80%;
 }
 
 .logincontent_email{
+    margin: 15px 0px;
     width: 80%;
-    padding: 25px 10px;
+    padding: 15px 10px;
     border-radius: 20px;
     font-size: 30px;
     line-height: 30px;
@@ -107,6 +110,52 @@ body{
     color: #D6D6D6;
     font-size: 30px;
     
+}
+
+.loginsocial{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+}
+
+.loginsocial_facebook{
+    margin-right: 20px;
+}
+
+@media (max-width: 700px) { .loginonboarding_img{
+    display: none;
+    
+}
+.loginonboarding_text{
+    display: none;
+   
+}
+.loginonboarding{
+    display: none;
+    max-width: 0px; 
+}
+.login{
+    justify-content: center;
+}
+
+.logincontent{
+    max-width: 100%;
+}
+
+.logincontent_subtitle
+{
+    color: #D6D6D6;
+    font-size: 25px;
+    margin: 10px 0;
+    max-width: 90%;
+}
+
+.logincontent_email{
+    width: 90%;
+
+
+}
+
 }
 
 p {

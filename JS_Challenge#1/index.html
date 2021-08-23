@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema vs Streaming</title>
+</head>
+<script src="index.js"></script>
+<body>
+    <header>
+        <h1>Cinema vs Streaming</h1>
+    </header>
+    <div class="cinema">
+        <h1>Cinema</h1>
+        <p>Cuantas peliculas quieres ver en el mes?</p>
+        <button disabled=true id="cinema_minus" type="button" onclick="removeCinemaMovie()" >-</button>
+        <p id="cinema_num" >0</p>
+        <button type="button" onclick="addCinemaMovie()" >+</button>
+        <p>Costo: </p>
+        <input id="cinema_cost" type="number" onchange="calculateCinema()"  placeholder="Precio del boleto" >
+        <p>Total: </p>
+        <p id="cinema_total" >0</p>
+    </div>
+    <div class="streaming">
+        <h1>Streaming</h1>
+        <p>Selecciona cuantas peliculas o series verias en cada servicio de Streaming </p>
+        <p id="stream_left" >Movies Left: 0</p>
+    <div>
+        <p>Netflix</p>
+        <button disabled=true id="stream_minus1" type="button" onclick="removeStreamingMovie('stream_num1', 'stream_minus1' ,'stream_cost1', 'stream_total1')" >-</button>
+        <p id= "stream_num1" > 0 </p>
+        <button type="button" onclick="addStreamingMovie('stream_num1', 'stream_minus1','stream_cost1', 'stream_total1')" >+</button>
+        <p>Costo: </p>
+        <input id="stream_cost1" type="number" onchange="calculateService('stream_num1', 'stream_cost1', 'stream_total1')"  placeholder="Precio del servicio" >
+        <p >Costo por pelicula: </p>
+        <div id="stream_total1" > 0</div>
+    </div>
+    <div>
+        <p>HBO MAX</p>
+        <button disabled=true id="stream_minus2" type="button" onclick="removeStreamingMovie('stream_num2', 'stream_minus2' ,'stream_cost2', 'stream_total2')" >-</button>
+        <p id= "stream_num2" > 0 </p>
+        <button type="button" onclick="addStreamingMovie('stream_num2', 'stream_minus2','stream_cost2', 'stream_total2')" >+</button>
+        <p>Costo: </p>
+        <input id="stream_cost2" type="number" onchange="calculateService('stream_num2', 'stream_cost2', 'stream_total2')"  placeholder="Precio del servicio" >
+        <p >Costo por pelicula: </p>
+        <div id="stream_total2" > 0</div>
+    </div>
+    <div>
+        <p>Disney Plus</p>
+        <button disabled=true id="stream_minus3" type="button" onclick="removeStreamingMovie('stream_num3', 'stream_minus3' ,'stream_cost3', 'stream_total3')" >-</button>
+        <p id= "stream_num3" > 0 </p>
+        <button type="button" onclick="addStreamingMovie('stream_num3', 'stream_minus3','stream_cost3', 'stream_total3')" >+</button>
+        <p>Costo: </p>
+        <input id="stream_cost3" type="number" onchange="calculateService('stream_num3', 'stream_cost3', 'stream_total3')"  placeholder="Precio del servicio" >
+        <p >Costo por pelicula: </p>
+        <div id="stream_total3" > 0</div>
+    </div>
+    <p>Costo Total del Streaming</p>
+    <div id="stream_final">0</div>
+    </div>
+</body>
+</html>

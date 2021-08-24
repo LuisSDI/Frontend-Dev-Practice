@@ -16,6 +16,8 @@ function removeCinemaMovie() {
     }    
     if(movies.innerHTML == 0) {
         document.getElementById("cinema_minus").disabled = true;
+        let pricePerMovie = document.getElementById("cinema_per_movie");
+        pricePerMovie.innerHTML = 0;
     }
 }
 
@@ -35,8 +37,11 @@ function calculateCinema(){
     let price = Number(document.getElementById("cinema_cost").value);
     let total = document.getElementById("cinema_total");
     let pricePerMovie = document.getElementById("cinema_per_movie");
-    pricePerMovie.innerHTML = price;
+    if (movies>0) {
+       pricePerMovie.innerHTML = price; 
+    }
     total.innerHTML = `${movies * price}`;
+    streamTotal()
 }
 
 
@@ -88,8 +93,12 @@ function streamTotal(){
     let cost = 0;
     let activeService = 0;
     let streamPerMovieText= document.getElementById('stream_per_movie');
+    let pricePerMovie = 0;
+    if (document.getElementById("cinema_num").innerHTML > 0) {
+       pricePerMovie = Number(document.getElementById("cinema_per_movie").innerHTML); 
+    }
     let total = document.getElementById('stream_final');
-    
+    let result = document.getElementById('final');
     streamCost.forEach(element => {
          cost +=Number(element.value);
       });
@@ -100,8 +109,18 @@ function streamTotal(){
             activeService+=1;
         }
      });
-    
-    moviecost = moviecost / activeService;
+    if (activeService != 0) {
+        moviecost = moviecost / activeService;
+    }
     total.innerHTML = cost
-     streamPerMovieText.innerHTML = moviecost;
+    streamPerMovieText.innerHTML = moviecost;
+    if (pricePerMovie > moviecost) {
+        result.innerHTML = `Ahorras $${pricePerMovie - moviecost} por pelicula usando Streaming`
+    }
+    else if (pricePerMovie == moviecost) {
+        result.innerHTML = 'Te cuesta lo mismo ver peliculas por streaming o en el cinema';
+    }
+    else {
+        result.innerHTML = `Ahorras $${moviecost - pricePerMovie} por pelicula yendo al cine`
+    }
 }
